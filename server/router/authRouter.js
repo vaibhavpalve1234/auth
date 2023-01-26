@@ -29,7 +29,7 @@ const createRegisterUser = async (req, res) => {
         }
         const passwordHash = await hashPassword(password)
         const user = await new User({ name, email, password: passwordHash, address, role }).save()
-        const token = jwt.sign({ _id: user._id }, process.env.JWTSECRET, { expiresIn: '7d' })
+        const token = jwt.sign({ _id: user._id }, 'qw1234', { expiresIn: '7d' })
         res.status(201).json({
             user: {
                 name: user.name,
@@ -40,7 +40,7 @@ const createRegisterUser = async (req, res) => {
             token
         })
     } catch (error) {
-        console.log(error.message)
+        // console.log(error.message)
         res.status(404).send({ message: error.message })
     }
 }
@@ -88,7 +88,7 @@ const postLoginDetails = async (req, res) => {
         if (!validePassword) {
             return res.status(404).send({ message: "User Not Found" })
         }
-        const token = jwt.sign({ _id: user._id }, process.env.JWTSECRET, { expiresIn: '7d' })
+        const token = jwt.sign({ _id: user._id }, 'qw1234', { expiresIn: '7d' })
         res.status(201).json({
             user: {
                 name: user.name,
