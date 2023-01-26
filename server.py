@@ -32,7 +32,7 @@ def login():
     password = data.get('password')
 
     # Send a request to the Node.js server to check the credentials against the database
-    node_response = requests.post('http://node-server:3000/check-credentials', json={'email': email, 'password': password})
+    node_response = requests.post('http://node-server:3000/login', json={'email': email, 'password': password})
 
     # If the credentials are valid, return a success message
     if node_response.json()['status'] == 'success':
