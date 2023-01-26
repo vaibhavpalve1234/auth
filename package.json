@@ -1,0 +1,26 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "python server.py ",
+    "test":"node ./server/app.js",
+    "prod":"concurrently start && npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaibhavpalve1234/auth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaibhavpalve1234/auth/issues"
+  },
+  "homepage": "https://github.com/vaibhavpalve1234/auth#readme",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
